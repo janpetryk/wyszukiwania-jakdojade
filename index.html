@@ -9,85 +9,127 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Bare - Start Bootstrap Template</title>
+    <title>Wyszukiwania jakdojade</title>
 
     <!-- Bootstrap Core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.css">
+
 
     <!-- Custom CSS -->
     <style>
-    body {
-        padding-top: 70px;
-        /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
-    }
+        body {
+            padding-top: 70px;
+            /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
+        }
     </style>
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
 </head>
 
-<body>
+<body ng-app="wyszukiwania-jakdojade" ng-controller="stopMapController as ctrl">
 
-    <!-- Navigation -->
-    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-        <div class="container">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="#">Start Bootstrap</a>
-            </div>
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav">
-                    <li>
-                        <a href="#">About</a>
-                    </li>
-                    <li>
-                        <a href="#">Services</a>
-                    </li>
-                    <li>
-                        <a href="#">Contact</a>
-                    </li>
-                </ul>
-            </div>
-            <!-- /.navbar-collapse -->
-        </div>
-        <!-- /.container -->
-    </nav>
-
-    <!-- Page Content -->
+<!-- Navigation -->
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
     <div class="container">
-
-        <div class="row">
-            <div class="col-lg-12 text-center">
-                <h1>A Bootstrap Starter Template</h1>
-                <p class="lead">Complete with pre-defined file paths that you won't have to change!!</p>
-                <ul class="list-unstyled">
-                    <li>Bootstrap v3.3.7</li>
-                    <li>jQuery v1.11.1</li>
-                </ul>
-            </div>
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse"
+                    data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">Wyszukiwania jakdojade</a>
         </div>
-        <!-- /.row -->
-
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li>
+                    <a href="#">O projekcie</a>
+                </li>
+                <li>
+                    <a href="#">Mapa</a>
+                </li>
+                <li>
+                    <a href="#">Kontakt</a>
+                </li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
     </div>
     <!-- /.container -->
+</nav>
 
-    <!-- jQuery Version 1.11.1 -->
-    <script src="js/jquery.js"></script>
+<!-- Page Content -->
+<div class="container">
 
-    <!-- Bootstrap Core JavaScript -->
-    <script src="js/bootstrap.min.js"></script>
+    <div class="row">
+        <div class="row">
+            <div class="col-md-10 well-lg">
+                <md-autocomplete md-selected-item="ctrl.selectedItem"
+                                 md-search-text-change="ctrl.searchTextChange(ctrl.searchText)"
+                                 md-search-text="ctrl.searchText"
+                                 md-selected-item-change="ctrl.selectedItemChange(item)"
+                                 md-items="item in ctrl.querySearch(ctrl.searchText)"
+                                 md-item-text="item.stopInformation.name"
+                                 md-min-length="2"
+                                 placeholder="Znajdź przystanek" ng-cloak>
+                    <md-item-template>
+                        <span md-highlight-text="ctrl.searchText"
+                              md-highlight-flags="^i">{{item.stopInformation.name}}</span>
+                    </md-item-template>
+                </md-autocomplete>
+            </div>
+            <div class="col-md-10 text-center">
+
+                <div id="stops-map" class="google-map"></div>
+            </div>
+            <div class="col-md-2 text-center vcenter">
+                <div data-ng-repeat="result in ctrl.selectedItem.mostFrequentSearchInformationList">
+                    <span data-ng-cloak>{{result.endStop.name}} ({{result.searchCount}})</span>
+                </div>
+            </div>
+        </div>
+        <br/>
+        <br/>
+        <br/>
+        <!--<div class="row">-->
+        <!--<div class="col-lg-12 text-center">-->
+        <!--<div id="districts-map" class="google-map"></div>-->
+        <!--</div>-->
+        <!--</div>-->
+    </div>
+    <!-- /.row -->
+
+</div>
+<!-- /.container -->
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-animate.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-aria.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-messages.min.js"></script>
+
+<!-- Angular Material Library -->
+<script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.js"></script>
+<script type="text/javascript"
+        src="http://maps.googleapis.com/maps/api/js?sensor=true&key=AIzaSyD8MDzClwn6XmxrG4P5u9UyixrGvlqsC98"></script>
+
+
+<!-- Bootstrap Core JavaScript -->
+<script src="js/bootstrap.min.js"></script>
+<script src="js/stops.js"></script>
+<script src="js/districts.js"></script>
+<script src="js/stopMapController.js"></script>
 
 </body>
 
