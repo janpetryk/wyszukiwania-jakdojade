@@ -122,7 +122,7 @@
 
         function drawLineToMostFrequentStops(stop) {
             stop.mostFrequentSearchInformationList.forEach(function (elem, index) {
-                lines.push(line(stop.stopInformation.latitude, stop.stopInformation.longitude, elem.endStop.latitude, elem.endStop.longitude, 1 - (index + 1) / 10));
+                lines.push(line(stop.stopInformation.latitude, stop.stopInformation.longitude, elem.endStop.latitude, elem.endStop.longitude, 1 - (index) / 10));
             });
         }
 
