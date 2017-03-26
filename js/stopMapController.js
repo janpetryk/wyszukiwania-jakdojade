@@ -132,7 +132,11 @@
             });
 
             google.maps.event.addListener(marker, 'click', function () {
-                selectedItemChange(stop);
+                if (self.searchBoxSelectedItem) {
+                    onStopUnselect();
+                } else {
+                    selectedItemChange(stop);
+                }
                 $scope.$apply();
             });
         }
