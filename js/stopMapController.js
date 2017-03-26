@@ -83,6 +83,7 @@
         }
 
         function onStopUnselect() {
+            self.searchBoxSelectedItem = null;
             // self.selectedItem = null;
             hideMarkers();
             clearLines();
@@ -100,12 +101,21 @@
             markers[stop.stopInformation.id] = marker;
 
             google.maps.event.addListener(marker, 'mouseover', function () {
-                onStopSelect(stop);
-                $scope.$apply();
+                if (!self.searchBoxSelectedItem) {
+                    onStopSelect(stop);
+                    $scope.$apply();
+                }
             });
 
+
             google.maps.event.addListener(marker, 'mouseout', function () {
-                onStopUnselect();
+                if (!self.searchBoxSelectedItem) {
+                    onStopUnselect();
+                    $scope.$apply();
+                }
+            });
+            google.maps.event.addListener(marker, 'click', function () {
+                selectedItemChange(stop);
                 $scope.$apply();
             });
         }
@@ -139,9 +149,10 @@
             if (item) {
                 onStopUnselect();
                 onStopSelect(item);
+                self.searchBoxSelectedItem = item;
             }
 
-            if(!item && !searchText){
+            if (!item && !searchText) {
                 onStopUnselect();
             }
         }
