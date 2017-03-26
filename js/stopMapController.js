@@ -12,7 +12,6 @@
         self.districts = districts;
         self.querySearch = querySearch;
         self.selectedItemChange = selectedItemChange;
-        self.searchTextChange = searchTextChange;
 
         function init() {
             var origin = new google.maps.LatLng(51.126628, 17.036127);
@@ -80,7 +79,6 @@
             hideOtherMarkers(stop.stopInformation.id);
             // showInfoWindow(stop.stopInformation);
             drawLineToMostFrequentStops(stop);
-            $scope.$apply();
 
         }
 
@@ -89,7 +87,6 @@
             hideMarkers();
             clearLines();
             closeInfoWindow();
-            $scope.$apply();
         }
 
         function createMarker(stop) {
@@ -104,10 +101,12 @@
 
             google.maps.event.addListener(marker, 'mouseover', function () {
                 onStopSelect(stop);
+                $scope.$apply();
             });
 
             google.maps.event.addListener(marker, 'mouseout', function () {
                 onStopUnselect();
+                $scope.$apply();
             });
         }
 
@@ -132,22 +131,20 @@
 
         function querySearch(query) {
             return query ? self.stops.filter(function (item) {
-                    return item.stopInformation.name.toLowerCase().indexOf(query.toLowerCase()) === 0;
+                    return item.stopInformation.name.toLowerCase().indexOf(query.toLowerCase()) !== -1;
                 }) : self.stops;
         }
 
-        function selectedItemChange(item) {
+        function selectedItemChange(item, searchText) {
             if (item) {
+                onStopUnselect();
                 onStopSelect(item);
             }
-        }
 
-        function searchTextChange(newValue) {
-            if (!newValue) {
+            if(!item && !searchText){
                 onStopUnselect();
             }
         }
-
 
         init();
     });
