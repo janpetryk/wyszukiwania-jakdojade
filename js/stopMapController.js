@@ -27,6 +27,9 @@
                 createMarker(value);
             });
 
+            self.selectedItem = self.stops.find(function (elem) {
+                return "Galeria Dominikańska" === elem.stopInformation.name;
+            });
         }
 
 
@@ -75,14 +78,14 @@
         function onStopSelect(stop) {
             self.selectedItem = stop;
             hideOtherMarkers(stop.stopInformation.id);
-            showInfoWindow(stop.stopInformation);
+            // showInfoWindow(stop.stopInformation);
             drawLineToMostFrequentStops(stop);
             $scope.$apply();
 
         }
 
         function onStopUnselect() {
-            self.selectedItem = null;
+            // self.selectedItem = null;
             hideMarkers();
             clearLines();
             closeInfoWindow();

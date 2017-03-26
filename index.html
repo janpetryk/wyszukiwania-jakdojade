@@ -91,9 +91,11 @@
             </div>
             <div class="col-md-10 text-center">
 
-                <div id="stops-map" class="google-map"></div>
+                <div id="stops-map" class="map-width"></div>
             </div>
-            <div class="col-md-2 text-center vcenter">
+            <div class="col-md-2 text-left well map-width" >
+                <h4>Przystanek {{ctrl.selectedItem.stopInformation.name}}</h4>
+                <h5>Najczęściej wyszukiwane okolice (liczba zapytań)</h5>
                 <div data-ng-repeat="result in ctrl.selectedItem.mostFrequentSearchInformationList">
                     <span data-ng-cloak>{{result.endStop.name}} ({{result.searchCount}})</span>
                 </div>
