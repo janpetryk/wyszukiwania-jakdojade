@@ -114,6 +114,23 @@
                     $scope.$apply();
                 }
             });
+
+
+            var update_timeout = null;
+
+            google.maps.event.addListener(stopsMap, 'click', function (event) {
+                update_timeout = setTimeout(function () {
+                    if (self.searchBoxSelectedItem) {
+                        onStopUnselect();
+                        $scope.$apply();
+                    }
+                }, 200);
+            });
+
+            google.maps.event.addListener(stopsMap, 'dblclick', function (event) {
+                clearTimeout(update_timeout);
+            });
+
             google.maps.event.addListener(marker, 'click', function () {
                 selectedItemChange(stop);
                 $scope.$apply();
