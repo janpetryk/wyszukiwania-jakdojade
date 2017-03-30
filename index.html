@@ -34,7 +34,7 @@
 
 </head>
 
-<body ng-app="wyszukiwania-jakdojade" ng-controller="stopMapController as ctrl">
+<body ng-app="wyszukiwania-jakdojade">
 
 <!-- Navigation -->
 <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
@@ -73,7 +73,7 @@
 <div class="container">
 
     <div class="row">
-        <div class="row">
+        <div class="row" ng-controller="stopMapController as ctrl">
             <div class="col-md-10 well-lg">
                 <md-autocomplete md-selected-item="ctrl.searchBoxSelectedItem"
                                  md-search-text="ctrl.searchText"
@@ -92,7 +92,7 @@
 
                 <div id="stops-map" class="map-width"></div>
             </div>
-            <div class="col-md-2 text-left well map-width" data-ng-cloak >
+            <div class="col-md-2 text-left well map-width" data-ng-cloak>
                 <h4>Przystanek {{ctrl.selectedItem.stopInformation.name}}</h4>
                 <h5>Najczęściej wyszukiwane okolice (liczba zapytań)</h5>
                 <div data-ng-repeat="result in ctrl.selectedItem.mostFrequentSearchInformationList">
@@ -100,14 +100,18 @@
                 </div>
             </div>
         </div>
-        <br/>
-        <br/>
-        <br/>
-        <!--<div class="row">-->
-        <!--<div class="col-lg-12 text-center">-->
-        <!--<div id="districts-map" class="google-map"></div>-->
-        <!--</div>-->
-        <!--</div>-->
+
+
+
+        <div class="row" ng-controller="districtMapController as ctrl">
+            <div class="col-md-10 text-center">
+                <div id="districts-map" class="map-width"></div>
+            </div>
+            <div class="col-md-2 text-left well map-width" data-ng-cloak>
+               <h5>tekst</h5>
+                <span>{{ctrl.selectedPolygon.name}}</span>
+            </div>
+        </div>
     </div>
     <!-- /.row -->
 
@@ -125,12 +129,17 @@
 <script type="text/javascript"
         src="//maps.googleapis.com/maps/api/js?sensor=true&key=AIzaSyD8MDzClwn6XmxrG4P5u9UyixrGvlqsC98"></script>
 
+<script>
+    angular.module("wyszukiwania-jakdojade", ["ngMaterial"]);
+</script>
+
+<script src="js/districtMapController.js"></script>
+<script src="js/stopMapController.js"></script>
 
 <!-- Bootstrap Core JavaScript -->
 <script src="js/bootstrap.min.js"></script>
 <script src="js/stops.js"></script>
 <script src="js/districts.js"></script>
-<script src="js/stopMapController.js"></script>
 
 </body>
 
