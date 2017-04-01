@@ -5,6 +5,8 @@
         var districtsMap;
         var currentInfoWindow;
 
+        var colors = ["#a50f15", "#cb181d", "#ef3b2c", "#fb6a4a", "#fc9272","#fcbba1","#fee0d2","#fff5f0", "#FFFFFF"];
+        var selectedColor = "#9ecae1";
         self.districtPolygons = {};
 
         self.districts = districts;
@@ -17,14 +19,12 @@
         }
 
         function init() {
-            initPolygons();
-
             var origin = new google.maps.LatLng(51.126628, 17.036127);
 
             districtsMap = new google.maps.Map(document.getElementById('districts-map'), {
                 mapTypeId: 'roadmap',
                 center: origin,
-                zoom: 13,
+                zoom: 12,
                 styles: [
                     {
                         "featureType": "administrative.land_parcel",
@@ -101,23 +101,29 @@
 
             var districtPolygons = self.districts.map(function (d) {
                 return {
-                    id: d.id,
-                    name: d.name,
-                    points: d.polygonPoints.map(mapToPoint)
+                    id: d.district.id,
+                    name: d.district.name,
+                    points: d.district.polygonPoints.map(mapToPoint),
+                    mostFrequentSearches: d.mostFrequentDistrictSearchInformations
                 };
             });
+
+            function show(polygon) {
+                polygon.setOptions({fillOpacity: 0.35, strokeWeight: 2});
+            }
 
             angular.forEach(districtPolygons, function (elem) {
                 // Construct the polygon.
                 var polygon = new google.maps.Polygon({
                     paths: elem.points,
-                    strokeColor: '#FF0000',
+                    strokeColor: selectedColor,
                     strokeOpacity: 0.4,
                     strokeWeight: 0,
-                    fillColor: '#FF0000',
+                    fillColor: selectedColor,
                     fillOpacity: 0.0
                 });
                 polygon.name = elem.name;
+                polygon.mostFrequentSearches = elem.mostFrequentSearches;
                 self.districtPolygons[elem.id] = polygon;
 
                 polygon.setMap(districtsMap);
@@ -129,12 +135,31 @@
                 });
                 google.maps.event.addListener(polygon, 'mouseover', function () {
                     self.selectedPolygon = polygon;
-                    this.setOptions({fillOpacity: 0.35, strokeWeight: 2});
+                    polygon.setOptions({
+                        fillOpacity: 0.35,
+                        strokeWeight: 2,
+                        fillColor: selectedColor,
+                        strokeColor: selectedColor
+
+                    });
+                    angular.forEach(elem.mostFrequentSearches, function (e, i) {
+                        if (e.endDistrictId != elem.id) {
+                            self.districtPolygons[e.endDistrictId].setOptions({
+                                fillOpacity: 0.7,
+                                strokeWeight: 2,
+                                strokeColor: colors[i],
+                                fillColor: colors[i]
+                            });
+                        }
+                    });
+
                     $scope.$apply();
                 });
                 google.maps.event.addListener(polygon, 'mouseout', function () {
-                    polygon.hide();
-                    this.setOptions({fillOpacity: 0, strokeWeight: 0});
+                    polygon.setOptions({fillOpacity: 0, strokeWeight: 0});
+                    angular.forEach(elem.mostFrequentSearches, function (e) {
+                        self.districtPolygons[e.endDistrictId].setOptions({fillOpacity: 0, strokeWeight: 0});
+                    });
                     $scope.$apply();
                 });
             })
@@ -178,32 +203,7 @@
             }
         }
 
-
         init();
-
-        function initPolygons() {
-            google.maps.Polygon.prototype._visible = true;
-
-            google.maps.Polygon.prototype.hide = function () {
-                if (this._visible) {
-                    this._visible = false;
-                    this._strokeOpacity = this.strokeOpacity;
-                    this._fillOpacity = this.fillOpacity;
-                    this.strokeOpacity = 0;
-                    this.fillOpacity = 0;
-                    this.setMap(districtsMap);
-                }
-            }
-
-            google.maps.Polygon.prototype.show = function () {
-                if (!this._visible) {
-                    this._visible = true;
-                    this.strokeOpacity = this._strokeOpacity;
-                    this.fillOpacity = this._fillOpacity;
-                    this.setMap(districtsMap);
-                }
-            }
-        }
 
     });
 

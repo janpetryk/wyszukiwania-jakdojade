@@ -7,6 +7,7 @@
 
         var markers = {};
         var lines = [];
+        var colors = ["#67000d", "#a50f15", "#cb181d", "#ef3b2c", "#fb6a4a", "#fc9272","#fcbba1","#fee0d2","#fff5f0", "#FFFFFF"];
 
         self.stops = stops;
         self.districts = districts;
@@ -215,17 +216,17 @@
 
         function drawLineToMostFrequentStops(stop) {
             stop.mostFrequentSearchInformationList.forEach(function (elem, index) {
-                lines.push(line(stop.stopInformation.latitude, stop.stopInformation.longitude, elem.endStop.latitude, elem.endStop.longitude, 1 - (index) / 10));
+                lines.push(line(stop.stopInformation.latitude, stop.stopInformation.longitude, elem.endStop.latitude, elem.endStop.longitude, colors[index], 1 - (index) / 10));
             });
         }
 
-        function line(lat1, lon1, lat2, lon2, opacity) {
+        function line(lat1, lon1, lat2, lon2, color, opacity) {
             return new google.maps.Polyline({
                 path: [
                     new google.maps.LatLng(lat1, lon1),
                     new google.maps.LatLng(lat2, lon2)
                 ],
-                strokeColor: "#FF0000",
+                strokeColor: color,
                 strokeOpacity: opacity,
                 strokeWeight: 5,
                 map: stopsMap
