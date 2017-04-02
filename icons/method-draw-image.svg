@@ -1,0 +1,21 @@
+<svg width="51" height="80" xmlns="http://www.w3.org/2000/svg">
+
+ <style type="text/css">.st0{fill:none;}
+	.st1{fill:#FFFFFF;}</style>
+ <g class="currentLayer">
+  <title>Layer 1</title>
+  <path id="svg_1" d="m25.5,0c-14.1,0 -25.5,11.4 -25.5,25.6c0,3.7 0.8,7.1 2.1,10.3l22,42.7c0.6,1.2 2.2,1.2 2.8,0l22,-42.7c1.4,-3.1 2.1,-6.6 2.1,-10.3c0,-14.2 -11.4,-25.6 -25.5,-25.6zm0,46.1c-11.4,0 -20.7,-9.3 -20.7,-20.7c0,-11.4 9.3,-20.7 20.7,-20.7s20.7,9.3 20.7,20.7c0,11.4 -9.3,20.7 -20.7,20.7z"/>
+  <ellipse stroke="null" ry="20.874454" rx="20.874454" id="svg_3" cy="25.125387" cx="25.499999" stroke-opacity="null" stroke-width="null" fill="#ffffff"/>
+  <ellipse id="svg_6" cy="51.249705" cx="41.124595" fill-opacity="null" stroke-opacity="null" stroke-width="null" stroke="null" fill="null"/>
+  <path id="svg_2" d="m38.799996,28.050015l-0.6,-14.5l0,0c0,-0.8 -0.7,-1.5 -1.5,-1.5l-6.5,0l0,-0.6c0,-0.6 -0.5,-1 -1,-1l-6.9,0c-0.6,0 -1,0.5 -1,1l0,0.6l-6.6,0c-0.8,0 -1.5,0.7 -1.5,1.5l-0.6,14.5c0,0.6 0,1.5 0,2l0,4.1c0,0.8 0.7,1.5 1.5,1.5l0,0l0,1c0,0.8 0.7,1.5 1.5,1.5l1.8,0c0.8,0 1.5,-0.7 1.5,-1.5l0,-1l13.7,0l0,1c0,0.8 0.7,1.5 1.5,1.5l1.8,0c0.8,0 1.5,-0.7 1.5,-1.5l0,-1l0,0c0.8,0 1.5,-0.7 1.5,-1.5l0,-4.1c0,-0.5 0,-1.4 -0.1,-2zm-22.4,3.5c-0.8,0 -1.5,-0.7 -1.5,-1.5s0.7,-1.5 1.5,-1.5s1.5,0.7 1.5,1.5s-0.7,1.5 -1.5,1.5zm-0.2,-4.6c-0.5,0 -0.9,-0.3 -0.9,-0.7l0.2,-11.3c0,-0.4 0.4,-0.7 0.9,-0.7l18.7,0c0.5,0 0.9,0.3 0.9,0.7l0.2,11.3c0,0.4 -0.4,0.7 -0.9,0.7l-19.1,0zm18.8,4.6c-0.8,0 -1.5,-0.7 -1.5,-1.5s0.7,-1.5 1.5,-1.5c0.8,0 1.5,0.7 1.5,1.5s-0.7,1.5 -1.5,1.5z"/>
+  <ellipse id="svg_7" cy="51.249705" cx="41.124595" fill-opacity="null" stroke-opacity="null" stroke-width="null" stroke="null" fill="null"/>
+ </g>
+ <g>
+  <title>Layer 2</title>
+  <rect fill="none" y="0" x="0" height="100%" width="100%" id="backgroundrect"/>
+ </g>
+ <g>
+  <title>background</title>
+  <rect fill="none" id="canvas_background" height="402" width="582" y="-1" x="-1"/>
+ </g>
+</svg>

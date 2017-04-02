@@ -2670,56 +2670,6 @@ var stops = [{
         "searchCount": 27
     }]
 }, {
-    "stopInformation": {
-        "id": 3747,
-        "name": "Pętla Autobusowa, Zajezdnia MPK",
-        "latitude": 51.20698280000001,
-        "longitude": 16.2197182
-    },
-    "mostFrequentSearchInformationList": [{
-        "endStop": {
-            "id": 3344,
-            "name": "Dworzec Główny",
-            "latitude": 51.099882125,
-            "longitude": 17.036094775000002
-        }, "searchCount": 566
-    }, {
-        "endStop": {"id": 3667, "name": "Hotel Wrocław", "latitude": 51.09777278, "longitude": 17.02543526},
-        "searchCount": 27
-    }, {
-        "endStop": {"id": 3886, "name": "Rdestowa", "latitude": 51.11110603333333, "longitude": 16.889413166666667},
-        "searchCount": 26
-    }, {
-        "endStop": {
-            "id": 3868,
-            "name": "Pl. Grunwaldzki",
-            "latitude": 51.11171401176471,
-            "longitude": 17.061285694117647
-        }, "searchCount": 24
-    }, {
-        "endStop": {"id": 3653, "name": "Fiołkowa", "latitude": 51.09251825, "longitude": 16.977844075},
-        "searchCount": 17
-    }, {
-        "endStop": {"id": 3484, "name": "Zaporoska", "latitude": 51.097119559999996, "longitude": 17.01459714},
-        "searchCount": 16
-    }, {
-        "endStop": {"id": 3502, "name": "Leśnica", "latitude": 51.144674300000005, "longitude": 16.8723836},
-        "searchCount": 16
-    }, {
-        "endStop": {"id": 3791, "name": "Stadion Wrocław (Lotnicza)", "latitude": 51.13775674, "longitude": 16.9416157},
-        "searchCount": 15
-    }, {
-        "endStop": {
-            "id": 3334,
-            "name": "Galeria Dominikańska",
-            "latitude": 51.10819636363636,
-            "longitude": 17.039324681818183
-        }, "searchCount": 15
-    }, {
-        "endStop": {"id": 3764, "name": "Ożynowa", "latitude": 51.06467323333334, "longitude": 17.009683166666665},
-        "searchCount": 12
-    }]
-}, {
     "stopInformation": {"id": 3322, "name": "Armii Krajowej", "latitude": 51.08721348, "longitude": 17.06881872},
     "mostFrequentSearchInformationList": [{
         "endStop": {
@@ -8853,59 +8803,6 @@ var stops = [{
         }, "searchCount": 9
     }]
 }, {
-    "stopInformation": {"id": 3744, "name": "PKS. Informacja", "latitude": 51.30425, "longitude": 17.716544},
-    "mostFrequentSearchInformationList": [{
-        "endStop": {
-            "id": 3344,
-            "name": "Dworzec Główny",
-            "latitude": 51.099882125,
-            "longitude": 17.036094775000002
-        }, "searchCount": 110
-    }, {
-        "endStop": {
-            "id": 3868,
-            "name": "Pl. Grunwaldzki",
-            "latitude": 51.11171401176471,
-            "longitude": 17.061285694117647
-        }, "searchCount": 14
-    }, {
-        "endStop": {"id": 3583, "name": "Dworzec Nadodrze", "latitude": 51.1245144625, "longitude": 17.0345152125},
-        "searchCount": 11
-    }, {
-        "endStop": {"id": 3611, "name": "Magellana", "latitude": 51.11350783333333, "longitude": 17.121805566666666},
-        "searchCount": 9
-    }, {
-        "endStop": {
-            "id": 3334,
-            "name": "Galeria Dominikańska",
-            "latitude": 51.10819636363636,
-            "longitude": 17.039324681818183
-        }, "searchCount": 7
-    }, {
-        "endStop": {
-            "id": 3728,
-            "name": "ZACHODNIA (Stacja kolejowa)",
-            "latitude": 51.11628882,
-            "longitude": 17.00066842
-        }, "searchCount": 7
-    }, {
-        "endStop": {"id": 3313, "name": "Bagatela", "latitude": 51.15248796666666, "longitude": 17.0697241},
-        "searchCount": 6
-    }, {
-        "endStop": {
-            "id": 3388,
-            "name": "Wroclaw Industrial Park",
-            "latitude": 51.1125361,
-            "longitude": 16.993821033333333
-        }, "searchCount": 4
-    }, {
-        "endStop": {"id": 3384, "name": "Godebskiego (AWF Wrocław)", "latitude": 51.11385234, "longitude": 17.09800728},
-        "searchCount": 3
-    }, {
-        "endStop": {"id": 3349, "name": "Grunwaldzka", "latitude": 51.11507743333333, "longitude": 17.067247833333337},
-        "searchCount": 3
-    }]
-}, {
     "stopInformation": {
         "id": 3387,
         "name": "Dmowskiego",
@@ -11510,55 +11407,6 @@ var stops = [{
     }, {
         "endStop": {"id": 3894, "name": "Uniwersytecka", "latitude": 51.112628, "longitude": 17.03583},
         "searchCount": 60
-    }]
-}, {
-    "stopInformation": {"id": 3474, "name": "Łukowice Brzeskie", "latitude": 50.8324644, "longitude": 17.3476535},
-    "mostFrequentSearchInformationList": [{
-        "endStop": {
-            "id": 3344,
-            "name": "Dworzec Główny",
-            "latitude": 51.099882125,
-            "longitude": 17.036094775000002
-        }, "searchCount": 157
-    }, {
-        "endStop": {"id": 3886, "name": "Rdestowa", "latitude": 51.11110603333333, "longitude": 16.889413166666667},
-        "searchCount": 24
-    }, {
-        "endStop": {
-            "id": 3415,
-            "name": "BROCHÓW (Stacja kolejowa)",
-            "latitude": 51.06367603333334,
-            "longitude": 17.08311983333333
-        }, "searchCount": 9
-    }, {
-        "endStop": {"id": 3389, "name": "Bystrzycka", "latitude": 51.12377335, "longitude": 16.95859025},
-        "searchCount": 8
-    }, {
-        "endStop": {"id": 3739, "name": "Hala Orbita", "latitude": 51.132279100000005, "longitude": 16.989599166666665},
-        "searchCount": 8
-    }, {
-        "endStop": {
-            "id": 3400,
-            "name": "MIŃSKA (Rondo Rotm. Pileckiego)",
-            "latitude": 51.10737606666667,
-            "longitude": 16.949531333333336
-        }, "searchCount": 5
-    }, {
-        "endStop": {"id": 3533, "name": "National Forum of Music", "latitude": 51.10762995, "longitude": 17.02663065},
-        "searchCount": 5
-    }, {
-        "endStop": {"id": 3582, "name": "Hala Targowa", "latitude": 51.112679199999995, "longitude": 17.0395117},
-        "searchCount": 4
-    }, {
-        "endStop": {
-            "id": 3718,
-            "name": "Wyszyńskiego",
-            "latitude": 51.122331599999995,
-            "longitude": 17.052530814285713
-        }, "searchCount": 4
-    }, {
-        "endStop": {"id": 3871, "name": "Chińska", "latitude": 51.06065749999999, "longitude": 17.082494433333334},
-        "searchCount": 3
     }]
 }, {
     "stopInformation": {"id": 3482, "name": "Arabska", "latitude": 51.05132563333333, "longitude": 17.0924972},
@@ -16884,56 +16732,6 @@ var stops = [{
     }]
 }, {
     "stopInformation": {
-        "id": 3422,
-        "name": "PKS. Bus Station",
-        "latitude": 51.322360799999984,
-        "longitude": 16.855160650000002
-    },
-    "mostFrequentSearchInformationList": [{
-        "endStop": {
-            "id": 3344,
-            "name": "Dworzec Główny",
-            "latitude": 51.099882125,
-            "longitude": 17.036094775000002
-        }, "searchCount": 625
-    }, {
-        "endStop": {
-            "id": 3728,
-            "name": "ZACHODNIA (Stacja kolejowa)",
-            "latitude": 51.11628882,
-            "longitude": 17.00066842
-        }, "searchCount": 114
-    }, {
-        "endStop": {"id": 3791, "name": "Stadion Wrocław (Lotnicza)", "latitude": 51.13775674, "longitude": 16.9416157},
-        "searchCount": 60
-    }, {
-        "endStop": {"id": 3372, "name": "Pomorska", "latitude": 51.117654637499996, "longitude": 17.0312184875},
-        "searchCount": 51
-    }, {
-        "endStop": {"id": 3729, "name": "Kliniki", "latitude": 51.10940342, "longitude": 17.06591286},
-        "searchCount": 47
-    }, {
-        "endStop": {
-            "id": 3868,
-            "name": "Pl. Grunwaldzki",
-            "latitude": 51.11171401176471,
-            "longitude": 17.061285694117647
-        }, "searchCount": 34
-    }, {
-        "endStop": {"id": 3751, "name": "Fat", "latitude": 51.094431711111106, "longitude": 16.980180488888887},
-        "searchCount": 21
-    }, {
-        "endStop": {"id": 3616, "name": "Kowalska", "latitude": 51.12933459999999, "longitude": 17.11337663333333},
-        "searchCount": 20
-    }, {
-        "endStop": {"id": 3577, "name": "Kromera", "latitude": 51.13190221111111, "longitude": 17.064971666666665},
-        "searchCount": 16
-    }, {
-        "endStop": {"id": 3831, "name": "KUŹNIKI (Stacja kolejowa)", "latitude": 51.1262203, "longitude": 16.9550298},
-        "searchCount": 16
-    }]
-}, {
-    "stopInformation": {
         "id": 3597,
         "name": "Pl. Jana Pawła II",
         "latitude": 51.112014222222214,
@@ -17497,59 +17295,6 @@ var stops = [{
         "searchCount": 58
     }]
 }, {
-    "stopInformation": {"id": 3371, "name": "PKS Oława", "latitude": 50.9451299, "longitude": 17.2982734},
-    "mostFrequentSearchInformationList": [{
-        "endStop": {
-            "id": 3344,
-            "name": "Dworzec Główny",
-            "latitude": 51.099882125,
-            "longitude": 17.036094775000002
-        }, "searchCount": 405
-    }, {
-        "endStop": {
-            "id": 3358,
-            "name": "Sołtysowicka",
-            "latitude": 51.143133266666666,
-            "longitude": 17.071133199999995
-        }, "searchCount": 55
-    }, {
-        "endStop": {"id": 3724, "name": "Uniwersytet", "latitude": 51.1137554, "longitude": 17.0323377},
-        "searchCount": 32
-    }, {
-        "endStop": {"id": 3632, "name": "Śrubowa", "latitude": 51.11215972, "longitude": 17.0006219},
-        "searchCount": 29
-    }, {
-        "endStop": {"id": 3894, "name": "Uniwersytecka", "latitude": 51.112628, "longitude": 17.03583},
-        "searchCount": 27
-    }, {
-        "endStop": {"id": 3394, "name": "Dworzec Autobusowy", "latitude": 51.0970194, "longitude": 17.032878566666668},
-        "searchCount": 20
-    }, {
-        "endStop": {"id": 3783, "name": "Joannitów", "latitude": 51.0937336, "longitude": 17.0350275},
-        "searchCount": 18
-    }, {
-        "endStop": {
-            "id": 3607,
-            "name": "Urząd Wojewódzki",
-            "latitude": 51.10936183333334,
-            "longitude": 17.04886738888889
-        }, "searchCount": 13
-    }, {
-        "endStop": {
-            "id": 3838,
-            "name": "pl. Orląt Lwowskich",
-            "latitude": 51.1072664875,
-            "longitude": 17.021669562499998
-        }, "searchCount": 12
-    }, {
-        "endStop": {
-            "id": 3415,
-            "name": "BROCHÓW (Stacja kolejowa)",
-            "latitude": 51.06367603333334,
-            "longitude": 17.08311983333333
-        }, "searchCount": 11
-    }]
-}, {
     "stopInformation": {"id": 3720, "name": "Zagłębiowska", "latitude": 51.0733878, "longitude": 17.088577033333333},
     "mostFrequentSearchInformationList": [{
         "endStop": {
@@ -17684,51 +17429,6 @@ var stops = [{
     }, {
         "endStop": {"id": 3638, "name": "Hallera", "latitude": 51.08664468571429, "longitude": 17.012093657142856},
         "searchCount": 58
-    }]
-}, {
-    "stopInformation": {"id": 3330, "name": "Wiązów", "latitude": 50.8083246, "longitude": 17.1947569},
-    "mostFrequentSearchInformationList": [{
-        "endStop": {
-            "id": 3344,
-            "name": "Dworzec Główny",
-            "latitude": 51.099882125,
-            "longitude": 17.036094775000002
-        }, "searchCount": 175
-    }, {
-        "endStop": {"id": 3394, "name": "Dworzec Autobusowy", "latitude": 51.0970194, "longitude": 17.032878566666668},
-        "searchCount": 17
-    }, {
-        "endStop": {"id": 3855, "name": "Popowice", "latitude": 51.1262098, "longitude": 16.995991566666667},
-        "searchCount": 12
-    }, {
-        "endStop": {"id": 3704, "name": "Uniwersytet Ekonomiczny", "latitude": 51.089586, "longitude": 17.028584},
-        "searchCount": 7
-    }, {
-        "endStop": {
-            "id": 3524,
-            "name": "Wyższa Szkoła Bankowa",
-            "latitude": 51.11419323333333,
-            "longitude": 16.978694833333332
-        }, "searchCount": 7
-    }, {
-        "endStop": {
-            "id": 3868,
-            "name": "Pl. Grunwaldzki",
-            "latitude": 51.11171401176471,
-            "longitude": 17.061285694117647
-        }, "searchCount": 5
-    }, {
-        "endStop": {"id": 3583, "name": "Dworzec Nadodrze", "latitude": 51.1245144625, "longitude": 17.0345152125},
-        "searchCount": 5
-    }, {
-        "endStop": {"id": 3547, "name": "Nowy Dwór", "latitude": 51.11247347999999, "longitude": 16.96028986},
-        "searchCount": 3
-    }, {
-        "endStop": {"id": 3701, "name": "Biskupin", "latitude": 51.10113756666667, "longitude": 17.109264233333334},
-        "searchCount": 3
-    }, {
-        "endStop": {"id": 3586, "name": "Grudziądzka", "latitude": 51.1379321, "longitude": 17.0747051},
-        "searchCount": 3
     }]
 }, {
     "stopInformation": {
@@ -18259,64 +17959,6 @@ var stops = [{
     }, {
         "endStop": {"id": 3545, "name": "Niedźwiedzia", "latitude": 51.12141215999999, "longitude": 16.993467459999998},
         "searchCount": 367
-    }]
-}, {
-    "stopInformation": {
-        "id": 3627,
-        "name": "Dworzec kolejowy Solniki Wielkie",
-        "latitude": 51.1539556,
-        "longitude": 17.4933457
-    },
-    "mostFrequentSearchInformationList": [{
-        "endStop": {
-            "id": 3344,
-            "name": "Dworzec Główny",
-            "latitude": 51.099882125,
-            "longitude": 17.036094775000002
-        }, "searchCount": 40
-    }, {
-        "endStop": {"id": 3583, "name": "Dworzec Nadodrze", "latitude": 51.1245144625, "longitude": 17.0345152125},
-        "searchCount": 28
-    }, {
-        "endStop": {
-            "id": 3728,
-            "name": "ZACHODNIA (Stacja kolejowa)",
-            "latitude": 51.11628882,
-            "longitude": 17.00066842
-        }, "searchCount": 26
-    }, {
-        "endStop": {
-            "id": 3868,
-            "name": "Pl. Grunwaldzki",
-            "latitude": 51.11171401176471,
-            "longitude": 17.061285694117647
-        }, "searchCount": 14
-    }, {
-        "endStop": {"id": 3778, "name": "Bielany - Boczna", "latitude": 51.037589999999994, "longitude": 16.9683529},
-        "searchCount": 10
-    }, {
-        "endStop": {
-            "id": 3334,
-            "name": "Galeria Dominikańska",
-            "latitude": 51.10819636363636,
-            "longitude": 17.039324681818183
-        }, "searchCount": 10
-    }, {
-        "endStop": {"id": 3520, "name": "Kwidzyńska", "latitude": 51.13150471666666, "longitude": 17.07903848333333},
-        "searchCount": 9
-    }, {
-        "endStop": {"id": 3545, "name": "Niedźwiedzia", "latitude": 51.12141215999999, "longitude": 16.993467459999998},
-        "searchCount": 8
-    }, {
-        "endStop": {
-            "id": 3597,
-            "name": "Pl. Jana Pawła II",
-            "latitude": 51.112014222222214,
-            "longitude": 17.02120023333333
-        }, "searchCount": 7
-    }, {
-        "endStop": {"id": 3481, "name": "C.H. Korona", "latitude": 51.141953566666665, "longitude": 17.0929956},
-        "searchCount": 7
     }]
 }, {
     "stopInformation": {
@@ -21812,114 +21454,7 @@ var stops = [{
             "longitude": 17.021669562499998
         }, "searchCount": 225
     }]
-}, {
-    "stopInformation": {
-        "id": 3338,
-        "name": "Dworzec kolejowy Bierutów",
-        "latitude": 51.12822000000001,
-        "longitude": 17.5461718
-    },
-    "mostFrequentSearchInformationList": [{
-        "endStop": {
-            "id": 3344,
-            "name": "Dworzec Główny",
-            "latitude": 51.099882125,
-            "longitude": 17.036094775000002
-        }, "searchCount": 83
-    }, {
-        "endStop": {"id": 3583, "name": "Dworzec Nadodrze", "latitude": 51.1245144625, "longitude": 17.0345152125},
-        "searchCount": 77
-    }, {
-        "endStop": {
-            "id": 3358,
-            "name": "Sołtysowicka",
-            "latitude": 51.143133266666666,
-            "longitude": 17.071133199999995
-        }, "searchCount": 9
-    }, {
-        "endStop": {
-            "id": 3728,
-            "name": "ZACHODNIA (Stacja kolejowa)",
-            "latitude": 51.11628882,
-            "longitude": 17.00066842
-        }, "searchCount": 8
-    }, {
-        "endStop": {"id": 3507, "name": "Działdowska", "latitude": 51.13316526666667, "longitude": 17.105616299999998},
-        "searchCount": 7
-    }, {
-        "endStop": {"id": 3320, "name": "Zemska", "latitude": 51.11590716666666, "longitude": 16.9470566},
-        "searchCount": 6
-    }, {
-        "endStop": {"id": 3778, "name": "Bielany - Boczna", "latitude": 51.037589999999994, "longitude": 16.9683529},
-        "searchCount": 6
-    }, {
-        "endStop": {
-            "id": 3868,
-            "name": "Pl. Grunwaldzki",
-            "latitude": 51.11171401176471,
-            "longitude": 17.061285694117647
-        }, "searchCount": 5
-    }, {
-        "endStop": {"id": 3349, "name": "Grunwaldzka", "latitude": 51.11507743333333, "longitude": 17.067247833333337},
-        "searchCount": 4
-    }, {
-        "endStop": {"id": 3577, "name": "Kromera", "latitude": 51.13190221111111, "longitude": 17.064971666666665},
-        "searchCount": 4
-    }]
-}, {
-    "stopInformation": {"id": 3891, "name": "Dworzec PKP", "latitude": 50.89792419999999, "longitude": 17.372877},
-    "mostFrequentSearchInformationList": [{
-        "endStop": {
-            "id": 3344,
-            "name": "Dworzec Główny",
-            "latitude": 51.099882125,
-            "longitude": 17.036094775000002
-        }, "searchCount": 47
-    }, {
-        "endStop": {
-            "id": 3415,
-            "name": "BROCHÓW (Stacja kolejowa)",
-            "latitude": 51.06367603333334,
-            "longitude": 17.08311983333333
-        }, "searchCount": 26
-    }, {
-        "endStop": {
-            "id": 3369,
-            "name": "DŁUGA (Politechnika)",
-            "latitude": 51.12445143333334,
-            "longitude": 17.01046943333333
-        }, "searchCount": 16
-    }, {
-        "endStop": {
-            "id": 3868,
-            "name": "Pl. Grunwaldzki",
-            "latitude": 51.11171401176471,
-            "longitude": 17.061285694117647
-        }, "searchCount": 13
-    }, {
-        "endStop": {"id": 3553, "name": "most Grunwaldzki", "latitude": 51.1101585, "longitude": 17.05537542},
-        "searchCount": 9
-    }, {
-        "endStop": {"id": 3720, "name": "Zagłębiowska", "latitude": 51.0733878, "longitude": 17.088577033333333},
-        "searchCount": 5
-    }, {
-        "endStop": {"id": 3407, "name": "Górnickiego", "latitude": 51.1162914, "longitude": 17.05544328},
-        "searchCount": 5
-    }, {
-        "endStop": {"id": 3737, "name": "pl. Bema", "latitude": 51.11717871111111, "longitude": 17.04207971111111},
-        "searchCount": 5
-    }, {
-        "endStop": {"id": 3613, "name": "Hutmen", "latitude": 51.09600647999999, "longitude": 16.9858506},
-        "searchCount": 4
-    }, {
-        "endStop": {
-            "id": 3842,
-            "name": "Pl. Staszica",
-            "latitude": 51.122532155555554,
-            "longitude": 17.030624055555556
-        }, "searchCount": 3
-    }]
-}, {
+},{
     "stopInformation": {"id": 3642, "name": "Żmudzka", "latitude": 51.144836600000005, "longitude": 17.14183216},
     "mostFrequentSearchInformationList": [{
         "endStop": {
@@ -24154,52 +23689,6 @@ var stops = [{
             "latitude": 51.104385671428574,
             "longitude": 17.021761185714286
         }, "searchCount": 1
-    }]
-}, {
-    "stopInformation": {
-        "id": 3579,
-        "name": "PKS S.A. Dworzec autobusowy",
-        "latitude": 50.7244251,
-        "longitude": 16.6418747
-    },
-    "mostFrequentSearchInformationList": [{
-        "endStop": {
-            "id": 3344,
-            "name": "Dworzec Główny",
-            "latitude": 51.099882125,
-            "longitude": 17.036094775000002
-        }, "searchCount": 424
-    }, {
-        "endStop": {"id": 3394, "name": "Dworzec Autobusowy", "latitude": 51.0970194, "longitude": 17.032878566666668},
-        "searchCount": 21
-    }, {
-        "endStop": {"id": 3886, "name": "Rdestowa", "latitude": 51.11110603333333, "longitude": 16.889413166666667},
-        "searchCount": 14
-    }, {
-        "endStop": {"id": 3707, "name": "GRABISZYŃSKA (Cmentarz)", "latitude": 51.09011854, "longitude": 16.97676498},
-        "searchCount": 14
-    }, {
-        "endStop": {"id": 3592, "name": "Buforowa", "latitude": 51.070530999999995, "longitude": 17.0538326},
-        "searchCount": 12
-    }, {
-        "endStop": {"id": 3778, "name": "Bielany - Boczna", "latitude": 51.037589999999994, "longitude": 16.9683529},
-        "searchCount": 11
-    }, {
-        "endStop": {"id": 3667, "name": "Hotel Wrocław", "latitude": 51.09777278, "longitude": 17.02543526},
-        "searchCount": 11
-    }, {
-        "endStop": {"id": 3517, "name": "Świdnicka", "latitude": 51.10716656666667, "longitude": 17.032888916666668},
-        "searchCount": 11
-    }, {
-        "endStop": {"id": 3528, "name": "Rynek", "latitude": 51.110660089999996, "longitude": 17.026873209999998},
-        "searchCount": 11
-    }, {
-        "endStop": {
-            "id": 3868,
-            "name": "Pl. Grunwaldzki",
-            "latitude": 51.11171401176471,
-            "longitude": 17.061285694117647
-        }, "searchCount": 10
     }]
 }, {
     "stopInformation": {"id": 3326, "name": "Rondo Obrońców Grodna", "latitude": 51.16544045, "longitude": 17.02772015},

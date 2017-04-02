@@ -1,99 +1,21 @@
 (function () {
     var app = angular.module("wyszukiwania-jakdojade");
-    app.controller("stopMapController", function ($scope) {
+    app.controller("stopMapController", function ($scope, mapService) {
         var self = this;
         var stopsMap;
         var currentInfoWindow;
-
         var markers = {};
         var lines = [];
-        var colors = ["#67000d", "#a50f15", "#cb181d", "#ef3b2c", "#fb6a4a", "#fc9272","#fcbba1","#fee0d2","#fff5f0", "#FFFFFF"];
+        var colors = ["#67000d", "#a50f15", "#cb181d", "#ef3b2c", "#fb6a4a", "#fc9272", "#fcbba1", "#fee0d2", "#fff5f0", "#FFFFFF"];
 
         self.stops = stops;
-        self.districts = districts;
         self.querySearch = querySearch;
         self.selectedItemChange = selectedItemChange;
 
         function init() {
             var origin = new google.maps.LatLng(51.126628, 17.036127);
 
-            stopsMap = new google.maps.Map(document.getElementById('stops-map'), {
-                mapTypeId: 'roadmap',
-                center: origin,
-                zoom: 13,
-                styles:[
-                    {
-                        "featureType": "administrative.land_parcel",
-                        "elementType": "labels",
-                        "stylers": [
-                            {
-                                "visibility": "off"
-                            }
-                        ]
-                    },
-                    {
-                        "featureType": "poi",
-                        "elementType": "labels.text",
-                        "stylers": [
-                            {
-                                "visibility": "off"
-                            }
-                        ]
-                    },
-                    {
-                        "featureType": "poi.business",
-                        "stylers": [
-                            {
-                                "visibility": "off"
-                            }
-                        ]
-                    },
-                    {
-                        "featureType": "poi.park",
-                        "elementType": "labels.text",
-                        "stylers": [
-                            {
-                                "visibility": "off"
-                            }
-                        ]
-                    },
-                    {
-                        "featureType": "road.arterial",
-                        "elementType": "labels",
-                        "stylers": [
-                            {
-                                "visibility": "off"
-                            }
-                        ]
-                    },
-                    {
-                        "featureType": "road.highway",
-                        "elementType": "labels",
-                        "stylers": [
-                            {
-                                "visibility": "off"
-                            }
-                        ]
-                    },
-                    {
-                        "featureType": "road.local",
-                        "stylers": [
-                            {
-                                "visibility": "off"
-                            }
-                        ]
-                    },
-                    {
-                        "featureType": "road.local",
-                        "elementType": "labels",
-                        "stylers": [
-                            {
-                                "visibility": "off"
-                            }
-                        ]
-                    }
-                ]
-            });
+            stopsMap = mapService.initMap('stops-map');
 
             angular.forEach(self.stops, function (value) {
                 createMarker(value);
@@ -168,7 +90,12 @@
             var placeLoc = new google.maps.LatLng(stop.stopInformation.latitude, stop.stopInformation.longitude);
             var marker = new google.maps.Marker({
                 map: stopsMap,
-                position: placeLoc
+                position: placeLoc,
+                icon: {
+                    url: "icons/method-draw-image.svg",
+                    scaledSize: new google.maps.Size(22, 35)
+
+                }
 
             });
             markers[stop.stopInformation.id] = marker;
@@ -235,8 +162,8 @@
 
         function querySearch(query) {
             return query ? self.stops.filter(function (item) {
-                    return item.stopInformation.name.toLowerCase().indexOf(query.toLowerCase()) !== -1;
-                }) : self.stops;
+                return item.stopInformation.name.toLowerCase().indexOf(query.toLowerCase()) !== -1;
+            }) : self.stops;
         }
 
         function selectedItemChange(item, searchText) {
