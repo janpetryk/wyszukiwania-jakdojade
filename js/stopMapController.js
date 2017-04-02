@@ -15,7 +15,7 @@
         function init() {
             var origin = new google.maps.LatLng(51.126628, 17.036127);
 
-            stopsMap = mapService.initMap('stops-map');
+            stopsMap = mapService.initMap('stops-map', 14);
 
             angular.forEach(self.stops, function (value) {
                 createMarker(value);

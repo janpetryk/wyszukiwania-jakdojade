@@ -2,13 +2,13 @@
     var app = angular.module("wyszukiwania-jakdojade");
     app.service("mapService", function () {
 
-        this.initMap = function(id){
+        this.initMap = function(id, zoom){
             var origin = new google.maps.LatLng(51.109083, 17.039550);
 
             var map =  new google.maps.Map(document.getElementById(id), {
                 mapTypeId: 'roadmap',
                 center: origin,
-                zoom: 12,
+                zoom: zoom,
                 styles: [
                     {
                         "featureType": "administrative.land_parcel",

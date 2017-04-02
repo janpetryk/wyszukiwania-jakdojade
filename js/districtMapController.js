@@ -16,7 +16,7 @@
         }
 
         function init() {
-            districtsMap = mapService.initMap("districts-map");
+            districtsMap = mapService.initMap("districts-map", 12);
 
             var districtPolygons = self.districts.map(function (d) {
                 return {
