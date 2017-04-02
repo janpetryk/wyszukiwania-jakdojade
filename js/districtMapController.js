@@ -9,72 +9,108 @@
         self.districtPolygons = {};
 
         self.districts = districts;
-        self.outer = outer;
-
-        function mapToPoint(elem) {
-            return {lat: elem.latitude, lng: elem.longitude};
-        }
+        self.querySearch = querySearch;
+        self.selectedItemChange = selectedItemChange;
 
         function init() {
             districtsMap = mapService.initMap("districts-map", 12);
 
-            var districtPolygons = self.districts.map(function (d) {
-                return {
-                    id: d.district.id,
-                    name: d.district.name,
-                    points: d.district.polygonPoints.map(mapToPoint),
-                    mostFrequentSearches: d.mostFrequentDistrictSearchInformations
-                };
-            });
-
-            angular.forEach(districtPolygons, function (elem) {
+            angular.forEach(self.districts, function (d) {
                 var polygon = new google.maps.Polygon({
-                    paths: elem.points,
+                    paths: d.district.polygonPoints.map(mapToPoint),
                     strokeColor: selectedColor,
                     strokeOpacity: 0.4,
                     strokeWeight: 0,
                     fillColor: selectedColor,
                     fillOpacity: 0.0
                 });
-                polygon.name = elem.name;
-                polygon.mostFrequentSearches = elem.mostFrequentSearches;
-                self.districtPolygons[elem.id] = polygon;
+                polygon.name = d.district.name;
+                polygon.mostFrequentSearches = d.mostFrequentDistrictSearchInformations;
+                self.districtPolygons[d.district.id] = polygon;
 
                 polygon.setMap(districtsMap);
 
-                google.maps.event.addListener(polygon, 'click', function (event) {
-                    self.selectedPolygon = polygon;
-                    $scope.$apply();
-                });
                 google.maps.event.addListener(polygon, 'mouseover', function () {
-                    self.selectedPolygon = polygon;
-                    polygon.setOptions({
-                        fillOpacity: 0.35,
-                        strokeWeight: 2,
-                        fillColor: selectedColor,
-                        strokeColor: selectedColor
-
-                    });
-                    angular.forEach(elem.mostFrequentSearches, function (e, i) {
-                        self.districtPolygons[e.endDistrictId].setOptions({
-                            fillOpacity: 0.7,
-                            strokeWeight: 2,
-                            strokeColor: colors[i],
-                            fillColor: colors[i]
-                        });
-                    });
-
-                    $scope.$apply();
+                    if (!self.searchBoxSelectedItem) {
+                        onDistrictSelect(polygon);
+                        $scope.$apply();
+                    }
                 });
                 google.maps.event.addListener(polygon, 'mouseout', function () {
-                    polygon.setOptions({fillOpacity: 0, strokeWeight: 0});
-                    angular.forEach(elem.mostFrequentSearches, function (e) {
-                        self.districtPolygons[e.endDistrictId].setOptions({fillOpacity: 0, strokeWeight: 0});
-                    });
+                    if (!self.searchBoxSelectedItem) {
+                        onDistrictUnselect();
+                        $scope.$apply();
+                    }
+                });
+
+                google.maps.event.addListener(polygon, 'click', function () {
+                    if (self.searchBoxSelectedItem) {
+                        onDistrictUnselect();
+                        onDistrictSelect(polygon);
+                    } else {
+                        selectedItemChange(d);
+                    }
                     $scope.$apply();
                 });
+
             })
+
+            onDistrictSelect(Object.values(self.districtPolygons).find(function (elem) {
+                return "Stare Miasto" === elem.name;
+            }));
         }
+
+        function querySearch(query) {
+            return query ? self.districts.filter(function (item) {
+                return item.district.name.toLowerCase().indexOf(query.toLowerCase()) !== -1;
+            }) : self.districts;
+        }
+
+
+        function selectedItemChange(item, searchText) {
+            if (item) {
+                var selectedPolygon = self.districtPolygons[item.district.id];
+                onDistrictUnselect(selectedPolygon);
+                onDistrictSelect(selectedPolygon);
+                self.searchBoxSelectedItem = item;
+            }
+
+            if (!item && !searchText) {
+                onDistrictUnselect();
+            }
+        }
+
+        function onDistrictUnselect() {
+            angular.forEach(Object.values(self.districtPolygons), function (e) {
+                e.setOptions({fillOpacity: 0, strokeWeight: 0});
+            });
+            self.searchBoxSelectedItem = null;
+        }
+
+
+        function onDistrictSelect(polygon) {
+            self.selectedPolygon = polygon;
+            polygon.setOptions({
+                fillOpacity: 0.35,
+                strokeWeight: 2,
+                fillColor: selectedColor,
+                strokeColor: selectedColor
+
+            });
+            angular.forEach(polygon.mostFrequentSearches, function (e, i) {
+                self.districtPolygons[e.endDistrictId].setOptions({
+                    fillOpacity: 0.7,
+                    strokeWeight: 2,
+                    strokeColor: colors[i],
+                    fillColor: colors[i]
+                });
+            });
+        }
+
+        function mapToPoint(elem) {
+            return {lat: elem.latitude, lng: elem.longitude};
+        }
+
 
         init();
 

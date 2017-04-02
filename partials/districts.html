@@ -1,0 +1,25 @@
+<div class="col-md-10 well-lg">
+    <md-autocomplete md-selected-item="ctrl.searchBoxSelectedItem"
+                     md-search-text="ctrl.searchText"
+                     md-selected-item-change="ctrl.selectedItemChange(item, ctrl.searchText)"
+                     md-items="item in ctrl.querySearch(ctrl.searchText)"
+                     md-item-text="item.district.name"
+                     md-min-length="2"
+                     placeholder="Znajdź osiedle" ng-cloak>
+        <md-item-template>
+                        <span md-highlight-text="ctrl.searchText"
+                              md-highlight-flags="^i">{{item.district.name}}</span>
+        </md-item-template>
+    </md-autocomplete>
+</div>
+
+<div class="col-md-10 text-center">
+    <div id="districts-map" class="map-width"></div>
+</div>
+<div class="col-md-2 text-left well map-width" data-ng-cloak>
+    <h4>{{ctrl.selectedPolygon.name}}</h4>
+    <h5>Najczęśniej wyszukiwane okolice</h5>
+    <div data-ng-repeat="result in ctrl.selectedPolygon.mostFrequentSearches">
+        <span data-ng-cloak>{{ctrl.districtPolygons[result.endDistrictId].name}} ({{result.searchCount}})</span>
+    </div>
+</div>

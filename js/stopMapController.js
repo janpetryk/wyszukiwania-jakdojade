@@ -13,8 +13,6 @@
         self.selectedItemChange = selectedItemChange;
 
         function init() {
-            var origin = new google.maps.LatLng(51.126628, 17.036127);
-
             stopsMap = mapService.initMap('stops-map', 14);
 
             angular.forEach(self.stops, function (value) {
@@ -72,14 +70,12 @@
         function onStopSelect(stop) {
             self.selectedItem = stop;
             hideOtherMarkers(stop.stopInformation.id);
-            // showInfoWindow(stop.stopInformation);
             drawLineToMostFrequentStops(stop);
 
         }
 
         function onStopUnselect() {
             self.searchBoxSelectedItem = null;
-            // self.selectedItem = null;
             hideMarkers();
             clearLines();
             closeInfoWindow();
