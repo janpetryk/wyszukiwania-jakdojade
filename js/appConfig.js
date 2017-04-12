@@ -23,7 +23,7 @@
                 controller: 'heatmapController',
                 controllerAs: 'ctrl'
             })
-            .otherwise({templateUrl: 'partials/heatmap.html'})
+            .otherwise({templateUrl: 'partials/about.html'})
     });
 
 
