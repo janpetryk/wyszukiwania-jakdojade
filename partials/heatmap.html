@@ -1,0 +1,19 @@
+<div class="col-md-12 well-lg">
+    <md-autocomplete md-selected-item="ctrl.searchBoxSelectedItem"
+                     md-search-text="ctrl.searchText"
+                     md-selected-item-change="ctrl.selectedItemChange(item, ctrl.searchText)"
+                     md-items="item in ctrl.querySearch(ctrl.searchText)"
+                     md-item-text="item.stopInformation.name"
+                     md-min-length="2"
+                     placeholder="Znajdź przystanek" ng-cloak>
+        <md-item-template>
+                        <span md-highlight-text="ctrl.searchText"
+                              md-highlight-flags="^i">{{item.stopInformation.name}}</span>
+        </md-item-template>
+    </md-autocomplete>
+</div>
+<div class="col-md-12 text-center">
+
+    <div id="heat-map" class="map-width"></div>
+</div>
+
