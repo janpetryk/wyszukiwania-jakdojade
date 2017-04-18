@@ -87,10 +87,14 @@ a:hover, a:focus{
 }
 
 .info-padding-top{
-    padding-top: 9px;
+    padding-top: 20px;
 }
 
 .profile-image{
     height: 170px
+}
+
+html{
+    background-color: white;
 }
 
