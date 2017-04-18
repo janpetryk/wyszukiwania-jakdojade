@@ -83,7 +83,7 @@ a:hover, a:focus{
 }
 
 .info-desc{
-    left: -50px;
+    flex-grow: 1;
 }
 
 .info-padding-top{
@@ -98,3 +98,11 @@ html{
     background-color: white;
 }
 
+.info-icon{
+    font-size: 35px !important;
+    padding-right: 15px;
+}
+
+.info-container{
+    display: flex;
+}
