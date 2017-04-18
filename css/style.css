@@ -10,3 +10,87 @@
 .map-width{
     height: 700px;
 }
+
+.bg-grey{
+   background-color: #f2f2f2;
+}
+
+.vertical-center {
+    min-height: 100%;  /* Fallback for browsers do NOT support vh unit */
+    min-height: 100px; /* These two lines are counted as one :-)       */
+
+    display: flex;
+    align-items: center;
+}
+
+section{
+    padding-bottom: 20px;
+}
+
+.description{
+    padding-bottom: 20px;
+}
+
+h2{
+    padding-bottom: 20px;
+}
+
+.card-body-social {
+    font-size: 25px;
+    padding-top: 12px;
+}
+.card-body-social .git {
+    color: black;
+    cursor: pointer;
+    margin-left: 10px;
+}
+.card-body-social .twitter {
+    color: #19C4FF;
+    cursor: pointer;
+    margin-left: 10px;
+}
+.card-body-social .google-plus {
+    color: #DD4B39;
+    cursor: pointer;
+    margin-left: 10px;
+}
+.card-body-social .facebook {
+    color: #49649F;
+    cursor: pointer;
+    margin-left: 10px;
+}
+.card-body-social .linkedin {
+    color: #007BB6;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+.img-circle {
+    border-radius: 50%;
+}
+
+.col-centered{
+    float: none;
+    margin: 0 auto;
+}
+
+.social-text{
+    font-size:medium;
+}
+
+a:hover, a:focus{
+    text-decoration: none;
+}
+
+.info-desc{
+    left: -50px;
+}
+
+.info-padding-top{
+    padding-top: 9px;
+}
+
+.profile-image{
+    height: 170px
+}
+
